@@ -14,34 +14,105 @@ import ByteBuf from '../bright/serialization/ByteBuf'
 
 
 
-export namespace demo {
-export class Item {
+export namespace city {
+export class area {
 
     constructor(_buf_: ByteBuf) {
         this.id = _buf_.ReadInt()
-        this.name = _buf_.ReadString()
-        this.desc = _buf_.ReadString()
-        this.count = _buf_.ReadInt()
+        this.areaId = _buf_.ReadInt()
+        this.unlockLv = _buf_.ReadInt()
+        { let n = Math.min(_buf_.ReadSize(), _buf_.Size); this.unlockCost = new Map<number, number>(); for(let i = 0 ; i < n ; i++) { let _k0; _k0 = _buf_.ReadInt();  let _v0;  _v0 = _buf_.ReadInt(); this.unlockCost.set(_k0, _v0);  } }
+        this.autoStage = _buf_.ReadInt()
     }
 
     /**
-     * id
+     * ID
      */
     readonly id: number
+    /**
+     * 区域ID
+     */
+    readonly areaId: number
+    /**
+     * 解锁等级
+     */
+    readonly unlockLv: number
+    /**
+     * 资源id
+     */
+    readonly unlockCost: Map<number, number>
+    readonly autoStage: number
+
+    resolve(tables:Tables) {
+        
+        
+        
+        
+        
+    }
+}
+
+}
+
+
+export namespace city {
+export class build {
+
+    constructor(_buf_: ByteBuf) {
+        this.id = _buf_.ReadInt()
+        this.buildType = _buf_.ReadInt()
+        this.belongBuild = _buf_.ReadInt()
+        this.name = _buf_.ReadString()
+        this.isBuild = _buf_.ReadBool()
+        this.requireLv = _buf_.ReadInt()
+        this.isUpgrade = _buf_.ReadBool()
+        this.isAppoint = _buf_.ReadBool()
+        this.configName = _buf_.ReadString()
+    }
+
+    /**
+     * ID
+     */
+    readonly id: number
+    /**
+     * 建筑类型ID
+     */
+    readonly buildType: number
+    /**
+     * 所属建筑
+     */
+    readonly belongBuild: number
     /**
      * 名称
      */
     readonly name: string
     /**
-     * 描述
+     * 是否可建造
      */
-    readonly desc: string
+    readonly isBuild: boolean
     /**
-     * 个数
+     * 需要玩家等级
      */
-    readonly count: number
+    readonly requireLv: number
+    /**
+     * 是否可升级
+     */
+    readonly isUpgrade: boolean
+    /**
+     * 是否需要指定位置
+     */
+    readonly isAppoint: boolean
+    /**
+     * 配置名称
+     */
+    readonly configName: string
 
     resolve(tables:Tables) {
+        
+        
+        
+        
+        
         
         
         
@@ -223,7 +294,135 @@ export class hero {
 
 
 
-export class loverpocker {
+export class item {
+
+    constructor(_buf_: ByteBuf) {
+        this.id = _buf_.ReadInt()
+        this.name = _buf_.ReadString()
+        this.des = _buf_.ReadString()
+        this.type = _buf_.ReadInt()
+        this.castleLevel = _buf_.ReadInt()
+        this.quality = _buf_.ReadInt()
+        this.icon = _buf_.ReadString()
+        this.canUse = _buf_.ReadBool()
+        this.tab = _buf_.ReadInt()
+        this.sort = _buf_.ReadInt()
+        this.haveLimit = _buf_.ReadBool()
+        this.autoUse = _buf_.ReadBool()
+        this.maxUseAmount = _buf_.ReadInt()
+        this.useSuccessTip = _buf_.ReadInt()
+        this.openType = _buf_.ReadInt()
+        this.openValue = _buf_.ReadInt()
+        this.stackNum = _buf_.ReadInt()
+        this.heroId = _buf_.ReadInt()
+        this.mergeItem = _buf_.ReadInt()
+    }
+
+    /**
+     * 道具ID
+     */
+    readonly id: number
+    /**
+     * 道具名
+     */
+    readonly name: string
+    /**
+     * 道具说明
+     */
+    readonly des: string
+    /**
+     * 道具种类
+     */
+    readonly type: number
+    /**
+     * 玩家使用等级
+     */
+    readonly castleLevel: number
+    /**
+     * 品质
+     */
+    readonly quality: number
+    /**
+     * 图标
+     */
+    readonly icon: string
+    /**
+     * 是否可以使用
+     */
+    readonly canUse: boolean
+    /**
+     * 在背包何处显示
+     */
+    readonly tab: number
+    /**
+     * 背包中显示优先级
+     */
+    readonly sort: number
+    /**
+     * 存储上限
+     */
+    readonly haveLimit: boolean
+    /**
+     * 是否自动使用
+     */
+    readonly autoUse: boolean
+    /**
+     * 最大使用数量
+     */
+    readonly maxUseAmount: number
+    /**
+     * 使用成功提示
+     */
+    readonly useSuccessTip: number
+    /**
+     * 是否是礼包
+     */
+    readonly openType: number
+    /**
+     * 礼包ID
+     */
+    readonly openValue: number
+    /**
+     * 最大堆叠数
+     */
+    readonly stackNum: number
+    /**
+     * 英雄ID
+     */
+    readonly heroId: number
+    /**
+     * 可合成道具
+     */
+    readonly mergeItem: number
+
+    resolve(tables:Tables) {
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    }
+}
+
+
+
+
+export namespace lover {
+export class Pocker {
 
     constructor(_buf_: ByteBuf) {
         this.holeCards = _buf_.ReadString()
@@ -413,6 +612,122 @@ export class loverpocker {
     }
 }
 
+}
+
+
+
+export class task_cfg {
+
+    constructor(_buf_: ByteBuf) {
+        this.id = _buf_.ReadInt()
+        this.name = _buf_.ReadString()
+        this.des = _buf_.ReadString()
+        this.checkType = _buf_.ReadInt()
+        this.targetType = _buf_.ReadInt()
+        this.targetId = _buf_.ReadInt()
+        this.targetNum = _buf_.ReadInt()
+        this.jumpType = _buf_.ReadInt()
+        this.jumpValve = _buf_.ReadInt()
+        this.rewardExp = _buf_.ReadInt()
+        this.unlockLv = _buf_.ReadInt()
+        this.resetType = _buf_.ReadInt()
+        this.sort = _buf_.ReadInt()
+        this.priceLv = _buf_.ReadInt()
+        this.guildBubble = _buf_.ReadInt()
+        this.taskGuiild = _buf_.ReadInt()
+        this.preTask = _buf_.ReadInt()
+    }
+
+    /**
+     * 任务ID
+     */
+    readonly id: number
+    /**
+     * 任务名称
+     */
+    readonly name: string
+    /**
+     * 任务介绍
+     */
+    readonly des: string
+    /**
+     * 完成类型
+     */
+    readonly checkType: number
+    /**
+     * 目标类型
+     */
+    readonly targetType: number
+    /**
+     * 目标ID
+     */
+    readonly targetId: number
+    /**
+     * 目标数量
+     */
+    readonly targetNum: number
+    /**
+     * 跳转类型
+     */
+    readonly jumpType: number
+    /**
+     * 跳转目标
+     */
+    readonly jumpValve: number
+    /**
+     * 奖励经验
+     */
+    readonly rewardExp: number
+    /**
+     * 解锁等级
+     */
+    readonly unlockLv: number
+    /**
+     * 重置类型
+     */
+    readonly resetType: number
+    /**
+     * 类型
+     */
+    readonly sort: number
+    /**
+     * 稀有度
+     */
+    readonly priceLv: number
+    /**
+     * 引导气泡
+     */
+    readonly guildBubble: number
+    /**
+     * 任务指引
+     */
+    readonly taskGuiild: number
+    /**
+     * 前置任务
+     */
+    readonly preTask: number
+
+    resolve(tables:Tables) {
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    }
+}
+
 
 
 
@@ -486,58 +801,25 @@ export class vector4 {
 
 
 
-export namespace demo {
-export class TbItem {
-    private _dataMap: Map<number, demo.Item>
-    private _dataList: demo.Item[]
+export namespace lover {
+export class TbPocker {
+    private _dataMap: Map<string, lover.Pocker>
+    private _dataList: lover.Pocker[]
     constructor(_buf_: ByteBuf) {
-        this._dataMap = new Map<number, demo.Item>()
+        this._dataMap = new Map<string, lover.Pocker>()
         this._dataList = []
         for(let n = _buf_.ReadInt(); n > 0; n--) {
-            let _v: demo.Item
-            _v = new demo.Item(_buf_)
-            this._dataList.push(_v)
-            this._dataMap.set(_v.id, _v)
-        }
-    }
-
-    getDataMap(): Map<number, demo.Item> { return this._dataMap; }
-    getDataList(): demo.Item[] { return this._dataList; }
-
-    get(key: number): demo.Item | undefined {
-        return this._dataMap.get(key); 
-    }
-
-    resolve(tables:Tables) {
-        for(let  data of this._dataList)
-        {
-            data.resolve(tables)
-        }
-    }
-
-}
-}
-
-
-
-export class lover_poker {
-    private _dataMap: Map<string, loverpocker>
-    private _dataList: loverpocker[]
-    constructor(_buf_: ByteBuf) {
-        this._dataMap = new Map<string, loverpocker>()
-        this._dataList = []
-        for(let n = _buf_.ReadInt(); n > 0; n--) {
-            let _v: loverpocker
-            _v = new loverpocker(_buf_)
+            let _v: lover.Pocker
+            _v = new lover.Pocker(_buf_)
             this._dataList.push(_v)
             this._dataMap.set(_v.holeCards, _v)
         }
     }
 
-    getDataMap(): Map<string, loverpocker> { return this._dataMap; }
-    getDataList(): loverpocker[] { return this._dataList; }
+    getDataMap(): Map<string, lover.Pocker> { return this._dataMap; }
+    getDataList(): lover.Pocker[] { return this._dataList; }
 
-    get(key: string): loverpocker | undefined {
+    get(key: string): lover.Pocker | undefined {
         return this._dataMap.get(key); 
     }
 
@@ -549,7 +831,7 @@ export class lover_poker {
     }
 
 }
-
+}
 
 
 
@@ -586,32 +868,179 @@ export class Tbhero {
 
 
 
+export class Tbitem {
+    private _dataMap: Map<number, item>
+    private _dataList: item[]
+    constructor(_buf_: ByteBuf) {
+        this._dataMap = new Map<number, item>()
+        this._dataList = []
+        for(let n = _buf_.ReadInt(); n > 0; n--) {
+            let _v: item
+            _v = new item(_buf_)
+            this._dataList.push(_v)
+            this._dataMap.set(_v.id, _v)
+        }
+    }
+
+    getDataMap(): Map<number, item> { return this._dataMap; }
+    getDataList(): item[] { return this._dataList; }
+
+    get(key: number): item | undefined {
+        return this._dataMap.get(key); 
+    }
+
+    resolve(tables:Tables) {
+        for(let  data of this._dataList)
+        {
+            data.resolve(tables)
+        }
+    }
+
+}
+
+
+
+
+export class Tbtask_cfg {
+    private _dataMap: Map<number, task_cfg>
+    private _dataList: task_cfg[]
+    constructor(_buf_: ByteBuf) {
+        this._dataMap = new Map<number, task_cfg>()
+        this._dataList = []
+        for(let n = _buf_.ReadInt(); n > 0; n--) {
+            let _v: task_cfg
+            _v = new task_cfg(_buf_)
+            this._dataList.push(_v)
+            this._dataMap.set(_v.id, _v)
+        }
+    }
+
+    getDataMap(): Map<number, task_cfg> { return this._dataMap; }
+    getDataList(): task_cfg[] { return this._dataList; }
+
+    get(key: number): task_cfg | undefined {
+        return this._dataMap.get(key); 
+    }
+
+    resolve(tables:Tables) {
+        for(let  data of this._dataList)
+        {
+            data.resolve(tables)
+        }
+    }
+
+}
+
+
+
+export namespace city {
+export class Tbarea {
+    private _dataMap: Map<number, city.area>
+    private _dataList: city.area[]
+    constructor(_buf_: ByteBuf) {
+        this._dataMap = new Map<number, city.area>()
+        this._dataList = []
+        for(let n = _buf_.ReadInt(); n > 0; n--) {
+            let _v: city.area
+            _v = new city.area(_buf_)
+            this._dataList.push(_v)
+            this._dataMap.set(_v.id, _v)
+        }
+    }
+
+    getDataMap(): Map<number, city.area> { return this._dataMap; }
+    getDataList(): city.area[] { return this._dataList; }
+
+    get(key: number): city.area | undefined {
+        return this._dataMap.get(key); 
+    }
+
+    resolve(tables:Tables) {
+        for(let  data of this._dataList)
+        {
+            data.resolve(tables)
+        }
+    }
+
+}
+}
+
+
+export namespace city {
+export class Tbbuild {
+    private _dataMap: Map<number, city.build>
+    private _dataList: city.build[]
+    constructor(_buf_: ByteBuf) {
+        this._dataMap = new Map<number, city.build>()
+        this._dataList = []
+        for(let n = _buf_.ReadInt(); n > 0; n--) {
+            let _v: city.build
+            _v = new city.build(_buf_)
+            this._dataList.push(_v)
+            this._dataMap.set(_v.id, _v)
+        }
+    }
+
+    getDataMap(): Map<number, city.build> { return this._dataMap; }
+    getDataList(): city.build[] { return this._dataList; }
+
+    get(key: number): city.build | undefined {
+        return this._dataMap.get(key); 
+    }
+
+    resolve(tables:Tables) {
+        for(let  data of this._dataList)
+        {
+            data.resolve(tables)
+        }
+    }
+
+}
+}
+
+
+
 type ByteBufLoader = (file: string) => ByteBuf
 
 export class Tables {
-    private _TbItem: demo.TbItem
-    get TbItem(): demo.TbItem  { return this._TbItem;}
-    private _lover_poker: lover_poker
-    get lover_poker(): lover_poker  { return this._lover_poker;}
+    private _TbPocker: lover.TbPocker
+    get TbPocker(): lover.TbPocker  { return this._TbPocker;}
     private _Tbhero: Tbhero
     get Tbhero(): Tbhero  { return this._Tbhero;}
+    private _Tbitem: Tbitem
+    get Tbitem(): Tbitem  { return this._Tbitem;}
+    private _Tbtask_cfg: Tbtask_cfg
+    get Tbtask_cfg(): Tbtask_cfg  { return this._Tbtask_cfg;}
+    private _Tbarea: city.Tbarea
+    get Tbarea(): city.Tbarea  { return this._Tbarea;}
+    private _Tbbuild: city.Tbbuild
+    get Tbbuild(): city.Tbbuild  { return this._Tbbuild;}
 
     static getTableNames(): string[] {
         let names: string[] = [];
-        names.push('demo_tbitem');
-        names.push('lover_poker');
+        names.push('lover_tbpocker');
         names.push('tbhero');
+        names.push('tbitem');
+        names.push('tbtask_cfg');
+        names.push('city_tbarea');
+        names.push('city_tbbuild');
         return names;
     }
 
     constructor(loader: ByteBufLoader) {
-        this._TbItem = new demo.TbItem(loader('demo_tbitem'))
-        this._lover_poker = new lover_poker(loader('lover_poker'))
+        this._TbPocker = new lover.TbPocker(loader('lover_tbpocker'))
         this._Tbhero = new Tbhero(loader('tbhero'))
+        this._Tbitem = new Tbitem(loader('tbitem'))
+        this._Tbtask_cfg = new Tbtask_cfg(loader('tbtask_cfg'))
+        this._Tbarea = new city.Tbarea(loader('city_tbarea'))
+        this._Tbbuild = new city.Tbbuild(loader('city_tbbuild'))
 
-        this._TbItem.resolve(this)
-        this._lover_poker.resolve(this)
+        this._TbPocker.resolve(this)
         this._Tbhero.resolve(this)
+        this._Tbitem.resolve(this)
+        this._Tbtask_cfg.resolve(this)
+        this._Tbarea.resolve(this)
+        this._Tbbuild.resolve(this)
     }
 }
 

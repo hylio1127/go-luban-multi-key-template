@@ -12,38 +12,119 @@
 
 
 
-export namespace demo {
-export class Item {
+export namespace city {
+export class area {
 
     constructor(_json_: any) {
         if (_json_.id === undefined) { throw new Error() }
         this.id = _json_.id
-        if (_json_.name === undefined) { throw new Error() }
-        this.name = _json_.name
-        if (_json_.desc === undefined) { throw new Error() }
-        this.desc = _json_.desc
-        if (_json_.count === undefined) { throw new Error() }
-        this.count = _json_.count
+        if (_json_.area_id === undefined) { throw new Error() }
+        this.areaId = _json_.area_id
+        if (_json_.unlock_lv === undefined) { throw new Error() }
+        this.unlockLv = _json_.unlock_lv
+        if (_json_.unlock_cost === undefined) { throw new Error() }
+        this.unlockCost = new Map<number, number>(); for(var _entry0_ of _json_.unlock_cost) { let _k0; _k0 = _entry0_[0];  let _v0;  _v0 = _entry0_[1]; this.unlockCost.set(_k0, _v0);  }
+        if (_json_.auto_stage === undefined) { throw new Error() }
+        this.autoStage = _json_.auto_stage
     }
 
     /**
-     * id
+     * ID
      */
     readonly id: number
+    /**
+     * 区域ID
+     */
+    readonly areaId: number
+    /**
+     * 解锁等级
+     */
+    readonly unlockLv: number
+    /**
+     * 资源id
+     */
+    readonly unlockCost: Map<number, number>
+    readonly autoStage: number
+
+    resolve(tables:Tables) {
+        
+        
+        
+        
+        
+    }
+}
+
+}
+
+
+export namespace city {
+export class build {
+
+    constructor(_json_: any) {
+        if (_json_.id === undefined) { throw new Error() }
+        this.id = _json_.id
+        if (_json_.build_type === undefined) { throw new Error() }
+        this.buildType = _json_.build_type
+        if (_json_.belong_build === undefined) { throw new Error() }
+        this.belongBuild = _json_.belong_build
+        if (_json_.name === undefined) { throw new Error() }
+        this.name = _json_.name
+        if (_json_.is_build === undefined) { throw new Error() }
+        this.isBuild = _json_.is_build
+        if (_json_.require_lv === undefined) { throw new Error() }
+        this.requireLv = _json_.require_lv
+        if (_json_.is_upgrade === undefined) { throw new Error() }
+        this.isUpgrade = _json_.is_upgrade
+        if (_json_.is_appoint === undefined) { throw new Error() }
+        this.isAppoint = _json_.is_appoint
+        if (_json_.config_name === undefined) { throw new Error() }
+        this.configName = _json_.config_name
+    }
+
+    /**
+     * ID
+     */
+    readonly id: number
+    /**
+     * 建筑类型ID
+     */
+    readonly buildType: number
+    /**
+     * 所属建筑
+     */
+    readonly belongBuild: number
     /**
      * 名称
      */
     readonly name: string
     /**
-     * 描述
+     * 是否可建造
      */
-    readonly desc: string
+    readonly isBuild: boolean
     /**
-     * 个数
+     * 需要玩家等级
      */
-    readonly count: number
+    readonly requireLv: number
+    /**
+     * 是否可升级
+     */
+    readonly isUpgrade: boolean
+    /**
+     * 是否需要指定位置
+     */
+    readonly isAppoint: boolean
+    /**
+     * 配置名称
+     */
+    readonly configName: string
 
     resolve(tables:Tables) {
+        
+        
+        
+        
+        
         
         
         
@@ -251,7 +332,154 @@ export class hero {
 
 
 
-export class loverpocker {
+export class item {
+
+    constructor(_json_: any) {
+        if (_json_.id === undefined) { throw new Error() }
+        this.id = _json_.id
+        if (_json_.name === undefined) { throw new Error() }
+        this.name = _json_.name
+        if (_json_.des === undefined) { throw new Error() }
+        this.des = _json_.des
+        if (_json_.type === undefined) { throw new Error() }
+        this.type = _json_.type
+        if (_json_.castle_level === undefined) { throw new Error() }
+        this.castleLevel = _json_.castle_level
+        if (_json_.quality === undefined) { throw new Error() }
+        this.quality = _json_.quality
+        if (_json_.icon === undefined) { throw new Error() }
+        this.icon = _json_.icon
+        if (_json_.can_use === undefined) { throw new Error() }
+        this.canUse = _json_.can_use
+        if (_json_.tab === undefined) { throw new Error() }
+        this.tab = _json_.tab
+        if (_json_.sort === undefined) { throw new Error() }
+        this.sort = _json_.sort
+        if (_json_.have_limit === undefined) { throw new Error() }
+        this.haveLimit = _json_.have_limit
+        if (_json_.auto_use === undefined) { throw new Error() }
+        this.autoUse = _json_.auto_use
+        if (_json_.max_use_amount === undefined) { throw new Error() }
+        this.maxUseAmount = _json_.max_use_amount
+        if (_json_.use_success_tip === undefined) { throw new Error() }
+        this.useSuccessTip = _json_.use_success_tip
+        if (_json_.open_type === undefined) { throw new Error() }
+        this.openType = _json_.open_type
+        if (_json_.open_value === undefined) { throw new Error() }
+        this.openValue = _json_.open_value
+        if (_json_.stack_num === undefined) { throw new Error() }
+        this.stackNum = _json_.stack_num
+        if (_json_.hero_id === undefined) { throw new Error() }
+        this.heroId = _json_.hero_id
+        if (_json_.merge_item === undefined) { throw new Error() }
+        this.mergeItem = _json_.merge_item
+    }
+
+    /**
+     * 道具ID
+     */
+    readonly id: number
+    /**
+     * 道具名
+     */
+    readonly name: string
+    /**
+     * 道具说明
+     */
+    readonly des: string
+    /**
+     * 道具种类
+     */
+    readonly type: number
+    /**
+     * 玩家使用等级
+     */
+    readonly castleLevel: number
+    /**
+     * 品质
+     */
+    readonly quality: number
+    /**
+     * 图标
+     */
+    readonly icon: string
+    /**
+     * 是否可以使用
+     */
+    readonly canUse: boolean
+    /**
+     * 在背包何处显示
+     */
+    readonly tab: number
+    /**
+     * 背包中显示优先级
+     */
+    readonly sort: number
+    /**
+     * 存储上限
+     */
+    readonly haveLimit: boolean
+    /**
+     * 是否自动使用
+     */
+    readonly autoUse: boolean
+    /**
+     * 最大使用数量
+     */
+    readonly maxUseAmount: number
+    /**
+     * 使用成功提示
+     */
+    readonly useSuccessTip: number
+    /**
+     * 是否是礼包
+     */
+    readonly openType: number
+    /**
+     * 礼包ID
+     */
+    readonly openValue: number
+    /**
+     * 最大堆叠数
+     */
+    readonly stackNum: number
+    /**
+     * 英雄ID
+     */
+    readonly heroId: number
+    /**
+     * 可合成道具
+     */
+    readonly mergeItem: number
+
+    resolve(tables:Tables) {
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    }
+}
+
+
+
+
+export namespace lover {
+export class Pocker {
 
     constructor(_json_: any) {
         if (_json_.hole_cards === undefined) { throw new Error() }
@@ -471,6 +699,139 @@ export class loverpocker {
     }
 }
 
+}
+
+
+
+export class task_cfg {
+
+    constructor(_json_: any) {
+        if (_json_.id === undefined) { throw new Error() }
+        this.id = _json_.id
+        if (_json_.name === undefined) { throw new Error() }
+        this.name = _json_.name
+        if (_json_.des === undefined) { throw new Error() }
+        this.des = _json_.des
+        if (_json_.check_type === undefined) { throw new Error() }
+        this.checkType = _json_.check_type
+        if (_json_.target_type === undefined) { throw new Error() }
+        this.targetType = _json_.target_type
+        if (_json_.target_id === undefined) { throw new Error() }
+        this.targetId = _json_.target_id
+        if (_json_.target_num === undefined) { throw new Error() }
+        this.targetNum = _json_.target_num
+        if (_json_.jump_type === undefined) { throw new Error() }
+        this.jumpType = _json_.jump_type
+        if (_json_.jump_valve === undefined) { throw new Error() }
+        this.jumpValve = _json_.jump_valve
+        if (_json_.reward_exp === undefined) { throw new Error() }
+        this.rewardExp = _json_.reward_exp
+        if (_json_.unlock_lv === undefined) { throw new Error() }
+        this.unlockLv = _json_.unlock_lv
+        if (_json_.reset_type === undefined) { throw new Error() }
+        this.resetType = _json_.reset_type
+        if (_json_.sort === undefined) { throw new Error() }
+        this.sort = _json_.sort
+        if (_json_.price_lv === undefined) { throw new Error() }
+        this.priceLv = _json_.price_lv
+        if (_json_.guild_bubble === undefined) { throw new Error() }
+        this.guildBubble = _json_.guild_bubble
+        if (_json_.task_guiild === undefined) { throw new Error() }
+        this.taskGuiild = _json_.task_guiild
+        if (_json_.pre_task === undefined) { throw new Error() }
+        this.preTask = _json_.pre_task
+    }
+
+    /**
+     * 任务ID
+     */
+    readonly id: number
+    /**
+     * 任务名称
+     */
+    readonly name: string
+    /**
+     * 任务介绍
+     */
+    readonly des: string
+    /**
+     * 完成类型
+     */
+    readonly checkType: number
+    /**
+     * 目标类型
+     */
+    readonly targetType: number
+    /**
+     * 目标ID
+     */
+    readonly targetId: number
+    /**
+     * 目标数量
+     */
+    readonly targetNum: number
+    /**
+     * 跳转类型
+     */
+    readonly jumpType: number
+    /**
+     * 跳转目标
+     */
+    readonly jumpValve: number
+    /**
+     * 奖励经验
+     */
+    readonly rewardExp: number
+    /**
+     * 解锁等级
+     */
+    readonly unlockLv: number
+    /**
+     * 重置类型
+     */
+    readonly resetType: number
+    /**
+     * 类型
+     */
+    readonly sort: number
+    /**
+     * 稀有度
+     */
+    readonly priceLv: number
+    /**
+     * 引导气泡
+     */
+    readonly guildBubble: number
+    /**
+     * 任务指引
+     */
+    readonly taskGuiild: number
+    /**
+     * 前置任务
+     */
+    readonly preTask: number
+
+    resolve(tables:Tables) {
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    }
+}
+
 
 
 
@@ -553,56 +914,25 @@ export class vector4 {
 
 
 
-export namespace demo {
-export class TbItem {
-    private _dataMap: Map<number, demo.Item>
-    private _dataList: demo.Item[]
+export namespace lover {
+export class TbPocker {
+    private _dataMap: Map<string, lover.Pocker>
+    private _dataList: lover.Pocker[]
     constructor(_json_: any) {
-        this._dataMap = new Map<number, demo.Item>()
+        this._dataMap = new Map<string, lover.Pocker>()
         this._dataList = []
         for(var _json2_ of _json_) {
-            let _v: demo.Item
-            _v = new demo.Item(_json2_)
-            this._dataList.push(_v)
-            this._dataMap.set(_v.id, _v)
-        }
-    }
-
-    getDataMap(): Map<number, demo.Item> { return this._dataMap; }
-    getDataList(): demo.Item[] { return this._dataList; }
-
-    get(key: number): demo.Item | undefined { return this._dataMap.get(key); }
-
-    resolve(tables:Tables) {
-        for(let  data of this._dataList)
-        {
-            data.resolve(tables)
-        }
-    }
-
-}
-}
-
-
-
-export class lover_poker {
-    private _dataMap: Map<string, loverpocker>
-    private _dataList: loverpocker[]
-    constructor(_json_: any) {
-        this._dataMap = new Map<string, loverpocker>()
-        this._dataList = []
-        for(var _json2_ of _json_) {
-            let _v: loverpocker
-            _v = new loverpocker(_json2_)
+            let _v: lover.Pocker
+            _v = new lover.Pocker(_json2_)
             this._dataList.push(_v)
             this._dataMap.set(_v.holeCards, _v)
         }
     }
 
-    getDataMap(): Map<string, loverpocker> { return this._dataMap; }
-    getDataList(): loverpocker[] { return this._dataList; }
+    getDataMap(): Map<string, lover.Pocker> { return this._dataMap; }
+    getDataList(): lover.Pocker[] { return this._dataList; }
 
-    get(key: string): loverpocker | undefined { return this._dataMap.get(key); }
+    get(key: string): lover.Pocker | undefined { return this._dataMap.get(key); }
 
     resolve(tables:Tables) {
         for(let  data of this._dataList)
@@ -612,7 +942,7 @@ export class lover_poker {
     }
 
 }
-
+}
 
 
 
@@ -647,24 +977,160 @@ export class Tbhero {
 
 
 
+export class Tbitem {
+    private _dataMap: Map<number, item>
+    private _dataList: item[]
+    constructor(_json_: any) {
+        this._dataMap = new Map<number, item>()
+        this._dataList = []
+        for(var _json2_ of _json_) {
+            let _v: item
+            _v = new item(_json2_)
+            this._dataList.push(_v)
+            this._dataMap.set(_v.id, _v)
+        }
+    }
+
+    getDataMap(): Map<number, item> { return this._dataMap; }
+    getDataList(): item[] { return this._dataList; }
+
+    get(key: number): item | undefined { return this._dataMap.get(key); }
+
+    resolve(tables:Tables) {
+        for(let  data of this._dataList)
+        {
+            data.resolve(tables)
+        }
+    }
+
+}
+
+
+
+
+export class Tbtask_cfg {
+    private _dataMap: Map<number, task_cfg>
+    private _dataList: task_cfg[]
+    constructor(_json_: any) {
+        this._dataMap = new Map<number, task_cfg>()
+        this._dataList = []
+        for(var _json2_ of _json_) {
+            let _v: task_cfg
+            _v = new task_cfg(_json2_)
+            this._dataList.push(_v)
+            this._dataMap.set(_v.id, _v)
+        }
+    }
+
+    getDataMap(): Map<number, task_cfg> { return this._dataMap; }
+    getDataList(): task_cfg[] { return this._dataList; }
+
+    get(key: number): task_cfg | undefined { return this._dataMap.get(key); }
+
+    resolve(tables:Tables) {
+        for(let  data of this._dataList)
+        {
+            data.resolve(tables)
+        }
+    }
+
+}
+
+
+
+export namespace city {
+export class Tbarea {
+    private _dataMap: Map<number, city.area>
+    private _dataList: city.area[]
+    constructor(_json_: any) {
+        this._dataMap = new Map<number, city.area>()
+        this._dataList = []
+        for(var _json2_ of _json_) {
+            let _v: city.area
+            _v = new city.area(_json2_)
+            this._dataList.push(_v)
+            this._dataMap.set(_v.id, _v)
+        }
+    }
+
+    getDataMap(): Map<number, city.area> { return this._dataMap; }
+    getDataList(): city.area[] { return this._dataList; }
+
+    get(key: number): city.area | undefined { return this._dataMap.get(key); }
+
+    resolve(tables:Tables) {
+        for(let  data of this._dataList)
+        {
+            data.resolve(tables)
+        }
+    }
+
+}
+}
+
+
+export namespace city {
+export class Tbbuild {
+    private _dataMap: Map<number, city.build>
+    private _dataList: city.build[]
+    constructor(_json_: any) {
+        this._dataMap = new Map<number, city.build>()
+        this._dataList = []
+        for(var _json2_ of _json_) {
+            let _v: city.build
+            _v = new city.build(_json2_)
+            this._dataList.push(_v)
+            this._dataMap.set(_v.id, _v)
+        }
+    }
+
+    getDataMap(): Map<number, city.build> { return this._dataMap; }
+    getDataList(): city.build[] { return this._dataList; }
+
+    get(key: number): city.build | undefined { return this._dataMap.get(key); }
+
+    resolve(tables:Tables) {
+        for(let  data of this._dataList)
+        {
+            data.resolve(tables)
+        }
+    }
+
+}
+}
+
+
+
 type JsonLoader = (file: string) => any
 
 export class Tables {
-    private _TbItem: demo.TbItem
-    get TbItem(): demo.TbItem  { return this._TbItem;}
-    private _lover_poker: lover_poker
-    get lover_poker(): lover_poker  { return this._lover_poker;}
+    private _TbPocker: lover.TbPocker
+    get TbPocker(): lover.TbPocker  { return this._TbPocker;}
     private _Tbhero: Tbhero
     get Tbhero(): Tbhero  { return this._Tbhero;}
+    private _Tbitem: Tbitem
+    get Tbitem(): Tbitem  { return this._Tbitem;}
+    private _Tbtask_cfg: Tbtask_cfg
+    get Tbtask_cfg(): Tbtask_cfg  { return this._Tbtask_cfg;}
+    private _Tbarea: city.Tbarea
+    get Tbarea(): city.Tbarea  { return this._Tbarea;}
+    private _Tbbuild: city.Tbbuild
+    get Tbbuild(): city.Tbbuild  { return this._Tbbuild;}
 
     constructor(loader: JsonLoader) {
-        this._TbItem = new demo.TbItem(loader('demo_tbitem'))
-        this._lover_poker = new lover_poker(loader('lover_poker'))
+        this._TbPocker = new lover.TbPocker(loader('lover_tbpocker'))
         this._Tbhero = new Tbhero(loader('tbhero'))
+        this._Tbitem = new Tbitem(loader('tbitem'))
+        this._Tbtask_cfg = new Tbtask_cfg(loader('tbtask_cfg'))
+        this._Tbarea = new city.Tbarea(loader('city_tbarea'))
+        this._Tbbuild = new city.Tbbuild(loader('city_tbbuild'))
 
-        this._TbItem.resolve(this)
-        this._lover_poker.resolve(this)
+        this._TbPocker.resolve(this)
         this._Tbhero.resolve(this)
+        this._Tbitem.resolve(this)
+        this._Tbtask_cfg.resolve(this)
+        this._Tbarea.resolve(this)
+        this._Tbbuild.resolve(this)
     }
 }
 

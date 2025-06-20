@@ -2,12 +2,12 @@
 package {{__top_module}};
 {{~end~}}
 
-{{~
+{{
     go_full_name = full_name __this
     key_type = __this.key_ttype
     value_type =  __this.value_ttype
     index_field = __this.index_field
-~}}
+}}
 
 import "{{__luban_module_name}}"
 
@@ -58,24 +58,42 @@ func (table *{{go_full_name}}) Get(key {{declaring_type_name key_type}}) {{decla
 }
 
 {{~else if __this.is_list_table~}}
+{{~ _dataMapStr = "" ~}}
+{{~ _dataMapFormatStr = "" ~}}
+{{~ for x in __this.index_list ~}}
+	{{~ _dataMapStr = _dataMapStr + "map[" + declaring_type_name x.type + "]" ~}}
+	{{~ _dataMapFormatStr = _dataMapFormatStr + "[_v." + format_field_name __code_style x.index_field.name + "]" ~}}
+{{~ end ~}}
+{{~ _dataMapStr = _dataMapStr + declaring_type_name value_type ~}}
+
 type {{go_full_name}} struct {
     _dataList []{{declaring_type_name value_type}}
+	_dataMap {{_dataMapStr}}
 }
+
+/*
+	
+{{_dataMapStr}}
+{{_dataMapFormatStr}}
+{{__this}}
+*/
 
 func New{{go_full_name}}(_buf *luban.ByteBuf) (*{{go_full_name}}, error) {
 	if size, err := _buf.ReadSize() ; err != nil {
 		return nil, err
 	} else {
 		_dataList := make([]{{declaring_type_name value_type}}, 0, size)
+		_dataMap := make({{_dataMapStr}})
 
 		for i := 0 ; i < size ; i++ {
 			if _v, err2 := New{{full_name value_type.def_bean}}(_buf); err2 != nil {
 				return nil, err2
 			} else {
 				_dataList = append(_dataList, _v)
+				_dataMap{{_dataMapFormatStr}} = _v
 			}
 		}
-		return &{{go_full_name}}{_dataList:_dataList}, nil
+		return &{{go_full_name}}{_dataList:_dataList, _dataMap:_dataMap}, nil
 	}
 }
 
@@ -86,6 +104,7 @@ func (table *{{go_full_name}}) GetDataList() []{{declaring_type_name value_type}
 func (table *{{go_full_name}}) Get(index int) {{declaring_type_name value_type}} {
     return table._dataList[index]
 }
+
 
 {{~else~}}
 

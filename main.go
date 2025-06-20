@@ -1,11 +1,9 @@
 package main
 
 import (
-	"fmt"
 	"os"
 
 	"github.com/hylio1127/lubantest/datatables/output/luban"
-	cfg "github.com/hylio1127/lubantest/datatables/output/server/gen/bin"
 )
 
 func loader(file string) (*luban.ByteBuf, error) {
@@ -17,9 +15,9 @@ func loader(file string) (*luban.ByteBuf, error) {
 }
 
 func main() {
-	if tables, err := cfg.NewTables(loader); err != nil {
-		println(err.Error())
-	} else {
-		fmt.Printf("%v", tables.TbItem.GetDataList()[0])
-	}
+	// if tables, err := cfg.NewTables(loader); err != nil {
+	// 	println(err.Error())
+	// } else {
+	// 	// fmt.Printf("%v", tables.TbItem.GetDataList()[0])
+	// }
 }

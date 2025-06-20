@@ -3,7 +3,6 @@
     "id": 1301,
     "name": "廖化",
     "camp": 1,
-    "quality": "n",
     "type": 1,
     "atk": 66,
     "int": 59,
@@ -14,7 +13,6 @@
     "battle_range": 300,
     "personality": 6,
     "sex": 1,
-    "collision_size": 25,
     "speed": 200,
     "skill": [
       200
@@ -35,7 +33,6 @@
     "id": 1302,
     "name": "周仓",
     "camp": 1,
-    "quality": "n",
     "type": 1,
     "atk": 68,
     "int": 42,
@@ -46,7 +43,6 @@
     "battle_range": 300,
     "personality": 6,
     "sex": 1,
-    "collision_size": 25,
     "speed": 200,
     "skill": [
       100
@@ -67,7 +63,6 @@
     "id": 1401,
     "name": "关平",
     "camp": 1,
-    "quality": "r",
     "type": 1,
     "atk": 78,
     "int": 68,
@@ -78,7 +73,6 @@
     "battle_range": 300,
     "personality": 6,
     "sex": 1,
-    "collision_size": 25,
     "speed": 200,
     "skill": [
       100,
@@ -100,7 +94,6 @@
     "id": 1402,
     "name": "马良",
     "camp": 1,
-    "quality": "r",
     "type": 1,
     "atk": 23,
     "int": 80,
@@ -111,7 +104,6 @@
     "battle_range": 300,
     "personality": 6,
     "sex": 1,
-    "collision_size": 25,
     "speed": 200,
     "skill": [
       140220,
@@ -133,7 +125,6 @@
     "id": 1501,
     "name": "徐庶",
     "camp": 1,
-    "quality": "sr",
     "type": 1,
     "atk": 64,
     "int": 92,
@@ -144,7 +135,6 @@
     "battle_range": 300,
     "personality": 6,
     "sex": 1,
-    "collision_size": 25,
     "speed": 200,
     "skill": [
       150120,
@@ -168,7 +158,6 @@
     "id": 1502,
     "name": "魏延",
     "camp": 1,
-    "quality": "sr",
     "type": 1,
     "atk": 92,
     "int": 69,
@@ -179,7 +168,6 @@
     "battle_range": 300,
     "personality": 6,
     "sex": 1,
-    "collision_size": 25,
     "speed": 200,
     "skill": [
       200,
@@ -203,7 +191,6 @@
     "id": 1503,
     "name": "孟获",
     "camp": 1,
-    "quality": "sr",
     "type": 1,
     "atk": 86,
     "int": 42,
@@ -214,7 +201,6 @@
     "battle_range": 300,
     "personality": 6,
     "sex": 1,
-    "collision_size": 25,
     "speed": 200,
     "skill": [
       100,
@@ -238,7 +224,6 @@
     "id": 1601,
     "name": "张飞",
     "camp": 1,
-    "quality": "ssr",
     "type": 1,
     "atk": 98,
     "int": 33,
@@ -249,7 +234,6 @@
     "battle_range": 300,
     "personality": 6,
     "sex": 1,
-    "collision_size": 25,
     "speed": 200,
     "skill": [
       160120,
@@ -273,7 +257,6 @@
     "id": 1602,
     "name": "关羽",
     "camp": 1,
-    "quality": "ssr",
     "type": 1,
     "atk": 99,
     "int": 82,
@@ -284,7 +267,6 @@
     "battle_range": 300,
     "personality": 6,
     "sex": 1,
-    "collision_size": 25,
     "speed": 200,
     "skill": [
       100,
@@ -308,7 +290,6 @@
     "id": 1603,
     "name": "赵云",
     "camp": 1,
-    "quality": "ssr",
     "type": 1,
     "atk": 97,
     "int": 76,
@@ -319,7 +300,6 @@
     "battle_range": 300,
     "personality": 6,
     "sex": 1,
-    "collision_size": 25,
     "speed": 200,
     "skill": [
       160320,
@@ -343,7 +323,6 @@
     "id": 1604,
     "name": "刘备",
     "camp": 1,
-    "quality": "ssr",
     "type": 1,
     "atk": 89,
     "int": 80,
@@ -354,7 +333,6 @@
     "battle_range": 300,
     "personality": 6,
     "sex": 1,
-    "collision_size": 25,
     "speed": 200,
     "skill": [
       160420,
@@ -378,7 +356,6 @@
     "id": 1605,
     "name": "诸葛亮",
     "camp": 1,
-    "quality": "ssr",
     "type": 1,
     "atk": 46,
     "int": 100,
@@ -389,7 +366,6 @@
     "battle_range": 500,
     "personality": 6,
     "sex": 1,
-    "collision_size": 25,
     "speed": 200,
     "skill": [
       160520,
@@ -413,7 +389,6 @@
     "id": 2301,
     "name": "乐进",
     "camp": 2,
-    "quality": "n",
     "type": 1,
     "atk": 62,
     "int": 46,
@@ -424,7 +399,6 @@
     "battle_range": 300,
     "personality": 6,
     "sex": 1,
-    "collision_size": 25,
     "speed": 200,
     "skill": [
       200
@@ -445,7 +419,6 @@
     "id": 2302,
     "name": "王朗",
     "camp": 2,
-    "quality": "n",
     "type": 1,
     "atk": 27,
     "int": 71,
@@ -456,7 +429,6 @@
     "battle_range": 300,
     "personality": 6,
     "sex": 1,
-    "collision_size": 25,
     "speed": 200,
     "skill": [
       230220
@@ -477,7 +449,6 @@
     "id": 2401,
     "name": "曹洪",
     "camp": 2,
-    "quality": "r",
     "type": 1,
     "atk": 75,
     "int": 70,
@@ -488,7 +459,6 @@
     "battle_range": 300,
     "personality": 6,
     "sex": 1,
-    "collision_size": 25,
     "speed": 200,
     "skill": [
       100,
@@ -510,7 +480,6 @@
     "id": 2402,
     "name": "李典",
     "camp": 2,
-    "quality": "r",
     "type": 1,
     "atk": 72,
     "int": 71,
@@ -521,7 +490,6 @@
     "battle_range": 300,
     "personality": 6,
     "sex": 1,
-    "collision_size": 25,
     "speed": 200,
     "skill": [
       200,
@@ -543,7 +511,6 @@
     "id": 2501,
     "name": "张郃",
     "camp": 2,
-    "quality": "sr",
     "type": 1,
     "atk": 87,
     "int": 73,
@@ -554,7 +521,6 @@
     "battle_range": 500,
     "personality": 6,
     "sex": 1,
-    "collision_size": 25,
     "speed": 200,
     "skill": [
       300,
@@ -578,7 +544,6 @@
     "id": 2502,
     "name": "于禁",
     "camp": 2,
-    "quality": "sr",
     "type": 1,
     "atk": 87,
     "int": 72,
@@ -589,7 +554,6 @@
     "battle_range": 300,
     "personality": 6,
     "sex": 1,
-    "collision_size": 25,
     "speed": 200,
     "skill": [
       200,
@@ -613,7 +577,6 @@
     "id": 2503,
     "name": "徐晃",
     "camp": 2,
-    "quality": "sr",
     "type": 1,
     "atk": 90,
     "int": 64,
@@ -624,7 +587,6 @@
     "battle_range": 300,
     "personality": 6,
     "sex": 1,
-    "collision_size": 25,
     "speed": 200,
     "skill": [
       100,
@@ -648,7 +610,6 @@
     "id": 2601,
     "name": "曹操",
     "camp": 2,
-    "quality": "ssr",
     "type": 1,
     "atk": 85,
     "int": 94,
@@ -659,7 +620,6 @@
     "battle_range": 300,
     "personality": 6,
     "sex": 1,
-    "collision_size": 25,
     "speed": 200,
     "skill": [
       400,
@@ -683,7 +643,6 @@
     "id": 2602,
     "name": "夏侯惇",
     "camp": 2,
-    "quality": "ssr",
     "type": 1,
     "atk": 90,
     "int": 65,
@@ -694,7 +653,6 @@
     "battle_range": 300,
     "personality": 6,
     "sex": 1,
-    "collision_size": 25,
     "speed": 200,
     "skill": [
       200,
@@ -718,7 +676,6 @@
     "id": 2603,
     "name": "郭嘉",
     "camp": 2,
-    "quality": "ssr",
     "type": 1,
     "atk": 35,
     "int": 99,
@@ -729,7 +686,6 @@
     "battle_range": 300,
     "personality": 6,
     "sex": 1,
-    "collision_size": 25,
     "speed": 200,
     "skill": [
       260320,
@@ -753,7 +709,6 @@
     "id": 2604,
     "name": "夏侯渊",
     "camp": 2,
-    "quality": "ssr",
     "type": 1,
     "atk": 95,
     "int": 68,
@@ -764,7 +719,6 @@
     "battle_range": 500,
     "personality": 6,
     "sex": 1,
-    "collision_size": 25,
     "speed": 200,
     "skill": [
       260420,
@@ -788,7 +742,6 @@
     "id": 2605,
     "name": "许褚",
     "camp": 2,
-    "quality": "ssr",
     "type": 1,
     "atk": 96,
     "int": 36,
@@ -799,7 +752,6 @@
     "battle_range": 300,
     "personality": 6,
     "sex": 1,
-    "collision_size": 25,
     "speed": 200,
     "skill": [
       260520,
@@ -823,7 +775,6 @@
     "id": 3301,
     "name": "诸葛瑾",
     "camp": 3,
-    "quality": "n",
     "type": 1,
     "atk": 34,
     "int": 64,
@@ -834,7 +785,6 @@
     "battle_range": 300,
     "personality": 6,
     "sex": 1,
-    "collision_size": 25,
     "speed": 200,
     "skill": [
       330120
@@ -855,7 +805,6 @@
     "id": 3302,
     "name": "朱桓",
     "camp": 3,
-    "quality": "n",
     "type": 1,
     "atk": 65,
     "int": 50,
@@ -866,7 +815,6 @@
     "battle_range": 300,
     "personality": 6,
     "sex": 1,
-    "collision_size": 25,
     "speed": 200,
     "skill": [
       200
@@ -887,7 +835,6 @@
     "id": 3401,
     "name": "程普",
     "camp": 3,
-    "quality": "r",
     "type": 1,
     "atk": 71,
     "int": 71,
@@ -898,7 +845,6 @@
     "battle_range": 300,
     "personality": 6,
     "sex": 1,
-    "collision_size": 25,
     "speed": 200,
     "skill": [
       200,
@@ -920,7 +866,6 @@
     "id": 3402,
     "name": "徐盛",
     "camp": 3,
-    "quality": "r",
     "type": 1,
     "atk": 76,
     "int": 59,
@@ -931,7 +876,6 @@
     "battle_range": 300,
     "personality": 6,
     "sex": 1,
-    "collision_size": 25,
     "speed": 200,
     "skill": [
       200,
@@ -953,7 +897,6 @@
     "id": 3501,
     "name": "黄盖",
     "camp": 3,
-    "quality": "sr",
     "type": 1,
     "atk": 83,
     "int": 70,
@@ -964,7 +907,6 @@
     "battle_range": 300,
     "personality": 6,
     "sex": 1,
-    "collision_size": 25,
     "speed": 200,
     "skill": [
       100,
@@ -988,7 +930,6 @@
     "id": 3502,
     "name": "鲁肃",
     "camp": 3,
-    "quality": "sr",
     "type": 1,
     "atk": 56,
     "int": 91,
@@ -999,7 +940,6 @@
     "battle_range": 300,
     "personality": 6,
     "sex": 1,
-    "collision_size": 25,
     "speed": 200,
     "skill": [
       350220,
@@ -1023,7 +963,6 @@
     "id": 3503,
     "name": "凌统",
     "camp": 3,
-    "quality": "sr",
     "type": 1,
     "atk": 89,
     "int": 58,
@@ -1034,7 +973,6 @@
     "battle_range": 300,
     "personality": 6,
     "sex": 1,
-    "collision_size": 25,
     "speed": 200,
     "skill": [
       200,
@@ -1058,7 +996,6 @@
     "id": 3601,
     "name": "孙策",
     "camp": 3,
-    "quality": "ssr",
     "type": 1,
     "atk": 93,
     "int": 69,
@@ -1069,7 +1006,6 @@
     "battle_range": 300,
     "personality": 6,
     "sex": 1,
-    "collision_size": 25,
     "speed": 200,
     "skill": [
       200,
@@ -1093,7 +1029,6 @@
     "id": 3602,
     "name": "周瑜",
     "camp": 3,
-    "quality": "ssr",
     "type": 1,
     "atk": 78,
     "int": 98,
@@ -1104,7 +1039,6 @@
     "battle_range": 300,
     "personality": 6,
     "sex": 1,
-    "collision_size": 25,
     "speed": 200,
     "skill": [
       360220,
@@ -1128,7 +1062,6 @@
     "id": 3603,
     "name": "太史慈",
     "camp": 3,
-    "quality": "ssr",
     "type": 1,
     "atk": 94,
     "int": 64,
@@ -1139,7 +1072,6 @@
     "battle_range": 500,
     "personality": 6,
     "sex": 1,
-    "collision_size": 25,
     "speed": 200,
     "skill": [
       300,
@@ -1163,7 +1095,6 @@
     "id": 3604,
     "name": "孙坚",
     "camp": 3,
-    "quality": "ssr",
     "type": 1,
     "atk": 91,
     "int": 74,
@@ -1174,7 +1105,6 @@
     "battle_range": 300,
     "personality": 6,
     "sex": 1,
-    "collision_size": 25,
     "speed": 200,
     "skill": [
       360420,
@@ -1198,7 +1128,6 @@
     "id": 3605,
     "name": "大乔",
     "camp": 3,
-    "quality": "ssr",
     "type": 1,
     "atk": 57,
     "int": 92,
@@ -1209,7 +1138,6 @@
     "battle_range": 500,
     "personality": 6,
     "sex": 2,
-    "collision_size": 25,
     "speed": 200,
     "skill": [
       360520,
@@ -1233,7 +1161,6 @@
     "id": 3606,
     "name": "小乔",
     "camp": 3,
-    "quality": "ssr",
     "type": 1,
     "atk": 64,
     "int": 89,
@@ -1244,7 +1171,6 @@
     "battle_range": 500,
     "personality": 6,
     "sex": 2,
-    "collision_size": 25,
     "speed": 200,
     "skill": [
       360620,
@@ -1268,7 +1194,6 @@
     "id": 4301,
     "name": "张梁",
     "camp": 4,
-    "quality": "n",
     "type": 1,
     "atk": 69,
     "int": 60,
@@ -1279,7 +1204,6 @@
     "battle_range": 300,
     "personality": 6,
     "sex": 1,
-    "collision_size": 25,
     "speed": 200,
     "skill": [
       200
@@ -1300,7 +1224,6 @@
     "id": 4302,
     "name": "邢道荣",
     "camp": 4,
-    "quality": "n",
     "type": 1,
     "atk": 57,
     "int": 24,
@@ -1311,7 +1234,6 @@
     "battle_range": 300,
     "personality": 6,
     "sex": 1,
-    "collision_size": 25,
     "speed": 200,
     "skill": [
       100
@@ -1332,7 +1254,6 @@
     "id": 4401,
     "name": "华雄",
     "camp": 4,
-    "quality": "r",
     "type": 1,
     "atk": 75,
     "int": 56,
@@ -1343,7 +1264,6 @@
     "battle_range": 300,
     "personality": 6,
     "sex": 1,
-    "collision_size": 25,
     "speed": 200,
     "skill": [
       200,
@@ -1365,7 +1285,6 @@
     "id": 4402,
     "name": "马腾",
     "camp": 4,
-    "quality": "r",
     "type": 1,
     "atk": 75,
     "int": 52,
@@ -1376,7 +1295,6 @@
     "battle_range": 300,
     "personality": 6,
     "sex": 1,
-    "collision_size": 25,
     "speed": 200,
     "skill": [
       100,
@@ -1398,7 +1316,6 @@
     "id": 4501,
     "name": "颜良",
     "camp": 4,
-    "quality": "sr",
     "type": 1,
     "atk": 88,
     "int": 40,
@@ -1409,7 +1326,6 @@
     "battle_range": 300,
     "personality": 6,
     "sex": 1,
-    "collision_size": 25,
     "speed": 200,
     "skill": [
       450220,
@@ -1433,7 +1349,6 @@
     "id": 4502,
     "name": "文丑",
     "camp": 4,
-    "quality": "sr",
     "type": 1,
     "atk": 89,
     "int": 25,
@@ -1444,7 +1359,6 @@
     "battle_range": 300,
     "personality": 6,
     "sex": 1,
-    "collision_size": 25,
     "speed": 200,
     "skill": [
       450220,
@@ -1468,7 +1382,6 @@
     "id": 4503,
     "name": "司马微",
     "camp": 4,
-    "quality": "sr",
     "type": 1,
     "atk": 20,
     "int": 91,
@@ -1479,7 +1392,6 @@
     "battle_range": 300,
     "personality": 6,
     "sex": 1,
-    "collision_size": 25,
     "speed": 200,
     "skill": [
       450320,
@@ -1503,7 +1415,6 @@
     "id": 4601,
     "name": "吕布",
     "camp": 4,
-    "quality": "ssr",
     "type": 1,
     "atk": 100,
     "int": 26,
@@ -1514,7 +1425,6 @@
     "battle_range": 300,
     "personality": 6,
     "sex": 1,
-    "collision_size": 25,
     "speed": 200,
     "skill": [
       200,
@@ -1538,7 +1448,6 @@
     "id": 4602,
     "name": "张角",
     "camp": 4,
-    "quality": "ssr",
     "type": 1,
     "atk": 35,
     "int": 95,
@@ -1549,7 +1458,6 @@
     "battle_range": 300,
     "personality": 6,
     "sex": 1,
-    "collision_size": 25,
     "speed": 200,
     "skill": [
       460220,
@@ -1573,7 +1481,6 @@
     "id": 4603,
     "name": "董卓",
     "camp": 4,
-    "quality": "ssr",
     "type": 1,
     "atk": 85,
     "int": 65,
@@ -1584,7 +1491,6 @@
     "battle_range": 300,
     "personality": 6,
     "sex": 1,
-    "collision_size": 25,
     "speed": 200,
     "skill": [
       160120,
@@ -1608,7 +1514,6 @@
     "id": 4604,
     "name": "袁绍",
     "camp": 4,
-    "quality": "ssr",
     "type": 1,
     "atk": 84,
     "int": 76,
@@ -1619,7 +1524,6 @@
     "battle_range": 300,
     "personality": 6,
     "sex": 1,
-    "collision_size": 25,
     "speed": 200,
     "skill": [
       100,
@@ -1643,7 +1547,6 @@
     "id": 4605,
     "name": "貂蝉",
     "camp": 4,
-    "quality": "ssr",
     "type": 1,
     "atk": 46,
     "int": 91,
@@ -1654,7 +1557,6 @@
     "battle_range": 500,
     "personality": 6,
     "sex": 2,
-    "collision_size": 25,
     "speed": 200,
     "skill": [
       460520,
@@ -1678,7 +1580,6 @@
     "id": 5001,
     "name": "刀",
     "camp": 0,
-    "quality": "n",
     "type": 2,
     "atk": 50,
     "int": 0,
@@ -1689,7 +1590,6 @@
     "battle_range": 300,
     "personality": 6,
     "sex": 1,
-    "collision_size": 25,
     "speed": 200,
     "skill": [
       110
@@ -1708,7 +1608,6 @@
     "id": 5002,
     "name": "枪",
     "camp": 0,
-    "quality": "n",
     "type": 2,
     "atk": 40,
     "int": 0,
@@ -1719,7 +1618,6 @@
     "battle_range": 300,
     "personality": 6,
     "sex": 1,
-    "collision_size": 25,
     "speed": 200,
     "skill": [
       210
@@ -1738,7 +1636,6 @@
     "id": 5003,
     "name": "弓",
     "camp": 0,
-    "quality": "n",
     "type": 2,
     "atk": 60,
     "int": 0,
@@ -1749,7 +1646,6 @@
     "battle_range": 500,
     "personality": 6,
     "sex": 1,
-    "collision_size": 25,
     "speed": 200,
     "skill": [
       310
@@ -1768,7 +1664,6 @@
     "id": 5004,
     "name": "盾",
     "camp": 0,
-    "quality": "n",
     "type": 2,
     "atk": 30,
     "int": 0,
@@ -1779,7 +1674,6 @@
     "battle_range": 300,
     "personality": 6,
     "sex": 1,
-    "collision_size": 25,
     "speed": 200,
     "skill": [
       410
@@ -1798,7 +1692,6 @@
     "id": 5005,
     "name": "黄巾-刀",
     "camp": 0,
-    "quality": "n",
     "type": 2,
     "atk": 40,
     "int": 0,
@@ -1809,7 +1702,6 @@
     "battle_range": 300,
     "personality": 6,
     "sex": 1,
-    "collision_size": 25,
     "speed": 200,
     "skill": [
       110
@@ -1828,7 +1720,6 @@
     "id": 5006,
     "name": "黄巾-枪",
     "camp": 0,
-    "quality": "n",
     "type": 2,
     "atk": 40,
     "int": 0,
@@ -1839,7 +1730,6 @@
     "battle_range": 300,
     "personality": 6,
     "sex": 1,
-    "collision_size": 25,
     "speed": 200,
     "skill": [
       210
@@ -1858,7 +1748,6 @@
     "id": 5007,
     "name": "黄巾-弓",
     "camp": 0,
-    "quality": "n",
     "type": 2,
     "atk": 40,
     "int": 0,
@@ -1869,7 +1758,6 @@
     "battle_range": 500,
     "personality": 6,
     "sex": 1,
-    "collision_size": 25,
     "speed": 200,
     "skill": [
       310
@@ -1888,7 +1776,6 @@
     "id": 6001,
     "name": "阴兵",
     "camp": 0,
-    "quality": "n",
     "type": 2,
     "atk": 60,
     "int": 0,
@@ -1899,7 +1786,6 @@
     "battle_range": 300,
     "personality": 6,
     "sex": 1,
-    "collision_size": 25,
     "speed": 200,
     "skill": [
       610

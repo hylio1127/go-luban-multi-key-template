@@ -13,6 +13,13 @@ dotnet %LUBAN_DLL% ^
     -x go-bin.outputCodeDir=output\server\gen\bin ^
     -x bin.outputDataDir=output\server\data\bin ^
     -x json.outputDataDir=output\server\data\json ^
-    -x lubanGoModule=github.com/hylio1127/lubantest/datatables/output/luban
+    -x lubanGoModule= github.com/hylio1127/lubantest/cfg/luban
+
+if errorlevel 1 (
+    echo Luban 生成失败
+    pause
+    exit /b 1
+)
+
 
 pause

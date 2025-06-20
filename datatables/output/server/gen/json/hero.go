@@ -16,7 +16,6 @@ type hero struct {
     Id int32
     Name string
     Camp int32
-    Quality string
     Type int32
     Atk int32
     Int int32
@@ -27,7 +26,6 @@ type hero struct {
     BattleRange int32
     Personality int32
     Sex int32
-    CollisionSize int32
     Speed int32
     Skill []int32
     FitSkill []int32
@@ -52,7 +50,6 @@ func Newhero(_buf map[string]interface{}) (_v *hero, err error) {
     { var _ok_ bool; var __json_id__ interface{}; if __json_id__, _ok_ = _buf["id"]; !_ok_ || __json_id__ == nil { err = errors.New("id error"); return } else { var __x__ int32;  { var _ok_ bool; var _x_ float64; if _x_, _ok_ = __json_id__.(float64); !_ok_ { err = errors.New("__x__ error"); return }; __x__ = int32(_x_) }; _v.Id = __x__ }}
     { var _ok_ bool; var __json_name__ interface{}; if __json_name__, _ok_ = _buf["name"]; !_ok_ || __json_name__ == nil { err = errors.New("name error"); return } else { var __x__ string;  {  if __x__, _ok_ = __json_name__.(string); !_ok_ { err = errors.New("__x__ error"); return } }; _v.Name = __x__ }}
     { var _ok_ bool; var __json_camp__ interface{}; if __json_camp__, _ok_ = _buf["camp"]; !_ok_ || __json_camp__ == nil { err = errors.New("camp error"); return } else { var __x__ int32;  { var _ok_ bool; var _x_ float64; if _x_, _ok_ = __json_camp__.(float64); !_ok_ { err = errors.New("__x__ error"); return }; __x__ = int32(_x_) }; _v.Camp = __x__ }}
-    { var _ok_ bool; var __json_quality__ interface{}; if __json_quality__, _ok_ = _buf["quality"]; !_ok_ || __json_quality__ == nil { err = errors.New("quality error"); return } else { var __x__ string;  {  if __x__, _ok_ = __json_quality__.(string); !_ok_ { err = errors.New("__x__ error"); return } }; _v.Quality = __x__ }}
     { var _ok_ bool; var __json_type__ interface{}; if __json_type__, _ok_ = _buf["type"]; !_ok_ || __json_type__ == nil { err = errors.New("type error"); return } else { var __x__ int32;  { var _ok_ bool; var _x_ float64; if _x_, _ok_ = __json_type__.(float64); !_ok_ { err = errors.New("__x__ error"); return }; __x__ = int32(_x_) }; _v.Type = __x__ }}
     { var _ok_ bool; var __json_atk__ interface{}; if __json_atk__, _ok_ = _buf["atk"]; !_ok_ || __json_atk__ == nil { err = errors.New("atk error"); return } else { var __x__ int32;  { var _ok_ bool; var _x_ float64; if _x_, _ok_ = __json_atk__.(float64); !_ok_ { err = errors.New("__x__ error"); return }; __x__ = int32(_x_) }; _v.Atk = __x__ }}
     { var _ok_ bool; var __json_int__ interface{}; if __json_int__, _ok_ = _buf["int"]; !_ok_ || __json_int__ == nil { err = errors.New("int error"); return } else { var __x__ int32;  { var _ok_ bool; var _x_ float64; if _x_, _ok_ = __json_int__.(float64); !_ok_ { err = errors.New("__x__ error"); return }; __x__ = int32(_x_) }; _v.Int = __x__ }}
@@ -63,7 +60,6 @@ func Newhero(_buf map[string]interface{}) (_v *hero, err error) {
     { var _ok_ bool; var __json_battle_range__ interface{}; if __json_battle_range__, _ok_ = _buf["battle_range"]; !_ok_ || __json_battle_range__ == nil { err = errors.New("battle_range error"); return } else { var __x__ int32;  { var _ok_ bool; var _x_ float64; if _x_, _ok_ = __json_battle_range__.(float64); !_ok_ { err = errors.New("__x__ error"); return }; __x__ = int32(_x_) }; _v.BattleRange = __x__ }}
     { var _ok_ bool; var __json_personality__ interface{}; if __json_personality__, _ok_ = _buf["personality"]; !_ok_ || __json_personality__ == nil { err = errors.New("personality error"); return } else { var __x__ int32;  { var _ok_ bool; var _x_ float64; if _x_, _ok_ = __json_personality__.(float64); !_ok_ { err = errors.New("__x__ error"); return }; __x__ = int32(_x_) }; _v.Personality = __x__ }}
     { var _ok_ bool; var __json_sex__ interface{}; if __json_sex__, _ok_ = _buf["sex"]; !_ok_ || __json_sex__ == nil { err = errors.New("sex error"); return } else { var __x__ int32;  { var _ok_ bool; var _x_ float64; if _x_, _ok_ = __json_sex__.(float64); !_ok_ { err = errors.New("__x__ error"); return }; __x__ = int32(_x_) }; _v.Sex = __x__ }}
-    { var _ok_ bool; var __json_collision_size__ interface{}; if __json_collision_size__, _ok_ = _buf["collision_size"]; !_ok_ || __json_collision_size__ == nil { err = errors.New("collision_size error"); return } else { var __x__ int32;  { var _ok_ bool; var _x_ float64; if _x_, _ok_ = __json_collision_size__.(float64); !_ok_ { err = errors.New("__x__ error"); return }; __x__ = int32(_x_) }; _v.CollisionSize = __x__ }}
     { var _ok_ bool; var __json_speed__ interface{}; if __json_speed__, _ok_ = _buf["speed"]; !_ok_ || __json_speed__ == nil { err = errors.New("speed error"); return } else { var __x__ int32;  { var _ok_ bool; var _x_ float64; if _x_, _ok_ = __json_speed__.(float64); !_ok_ { err = errors.New("__x__ error"); return }; __x__ = int32(_x_) }; _v.Speed = __x__ }}
     { var _ok_ bool; var __json_skill__ interface{}; if __json_skill__, _ok_ = _buf["skill"]; !_ok_ || __json_skill__ == nil { err = errors.New("skill error"); return } else { var __x__ []int32;  {
                     var _arr0_ []interface{}
