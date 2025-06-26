@@ -16,21 +16,6 @@ type Tables struct {
     TbJusttest2 *TbJusttest2
     TbJusttest3 *TbJusttest3
     Tbhero *Tbhero
-    Tbarea *CityTbarea
-    Tbbuild *CityTbbuild
-    Tbbuild101 *CityTbbuild101
-    Tbbuild1011 *CityTbbuild1011
-    Tbbuild1012 *CityTbbuild1012
-    Tbbuild1013 *CityTbbuild1013
-    Tbbuild1014 *CityTbbuild1014
-    Tbbuild1015 *CityTbbuild1015
-    Tbbuild1016 *CityTbbuild1016
-    Tbbuild1018 *CityTbbuild1018
-    Tbbuild102 *CityTbbuild102
-    Tbbuild1021 *CityTbbuild1021
-    Tbbuild1022 *CityTbbuild1022
-    Tbbuild103 *CityTbbuild103
-    Tbbuild104 *CityTbbuild104
     Tbitem *ItemTbitem
     Tbtask *TaskTbtask
 }
@@ -62,96 +47,6 @@ func NewTables(loader JsonLoader) (*Tables, error) {
         return nil, err
     }
     if tables.Tbhero, err = NewTbhero(buf) ; err != nil {
-        return nil, err
-    }
-    if buf, err = loader("city_tbarea") ; err != nil {
-        return nil, err
-    }
-    if tables.Tbarea, err = NewCityTbarea(buf) ; err != nil {
-        return nil, err
-    }
-    if buf, err = loader("city_tbbuild") ; err != nil {
-        return nil, err
-    }
-    if tables.Tbbuild, err = NewCityTbbuild(buf) ; err != nil {
-        return nil, err
-    }
-    if buf, err = loader("city_tbbuild101") ; err != nil {
-        return nil, err
-    }
-    if tables.Tbbuild101, err = NewCityTbbuild101(buf) ; err != nil {
-        return nil, err
-    }
-    if buf, err = loader("city_tbbuild1011") ; err != nil {
-        return nil, err
-    }
-    if tables.Tbbuild1011, err = NewCityTbbuild1011(buf) ; err != nil {
-        return nil, err
-    }
-    if buf, err = loader("city_tbbuild1012") ; err != nil {
-        return nil, err
-    }
-    if tables.Tbbuild1012, err = NewCityTbbuild1012(buf) ; err != nil {
-        return nil, err
-    }
-    if buf, err = loader("city_tbbuild1013") ; err != nil {
-        return nil, err
-    }
-    if tables.Tbbuild1013, err = NewCityTbbuild1013(buf) ; err != nil {
-        return nil, err
-    }
-    if buf, err = loader("city_tbbuild1014") ; err != nil {
-        return nil, err
-    }
-    if tables.Tbbuild1014, err = NewCityTbbuild1014(buf) ; err != nil {
-        return nil, err
-    }
-    if buf, err = loader("city_tbbuild1015") ; err != nil {
-        return nil, err
-    }
-    if tables.Tbbuild1015, err = NewCityTbbuild1015(buf) ; err != nil {
-        return nil, err
-    }
-    if buf, err = loader("city_tbbuild1016") ; err != nil {
-        return nil, err
-    }
-    if tables.Tbbuild1016, err = NewCityTbbuild1016(buf) ; err != nil {
-        return nil, err
-    }
-    if buf, err = loader("city_tbbuild1018") ; err != nil {
-        return nil, err
-    }
-    if tables.Tbbuild1018, err = NewCityTbbuild1018(buf) ; err != nil {
-        return nil, err
-    }
-    if buf, err = loader("city_tbbuild102") ; err != nil {
-        return nil, err
-    }
-    if tables.Tbbuild102, err = NewCityTbbuild102(buf) ; err != nil {
-        return nil, err
-    }
-    if buf, err = loader("city_tbbuild1021") ; err != nil {
-        return nil, err
-    }
-    if tables.Tbbuild1021, err = NewCityTbbuild1021(buf) ; err != nil {
-        return nil, err
-    }
-    if buf, err = loader("city_tbbuild1022") ; err != nil {
-        return nil, err
-    }
-    if tables.Tbbuild1022, err = NewCityTbbuild1022(buf) ; err != nil {
-        return nil, err
-    }
-    if buf, err = loader("city_tbbuild103") ; err != nil {
-        return nil, err
-    }
-    if tables.Tbbuild103, err = NewCityTbbuild103(buf) ; err != nil {
-        return nil, err
-    }
-    if buf, err = loader("city_tbbuild104") ; err != nil {
-        return nil, err
-    }
-    if tables.Tbbuild104, err = NewCityTbbuild104(buf) ; err != nil {
         return nil, err
     }
     if buf, err = loader("item_tbitem") ; err != nil {

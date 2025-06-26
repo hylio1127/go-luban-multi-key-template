@@ -64,15 +64,21 @@ func (table *{{go_full_name}}) Get(key {{declaring_type_name key_type}}) {{decla
 	{{~ _dataMapStr = _dataMapStr + "map[" + declaring_type_name x.type + "]" ~}}
 	{{~ _dataMapFormatStr = _dataMapFormatStr + "[_v." + format_field_name __code_style x.index_field.name + "]" ~}}
 {{~ end ~}}
-{{~ _dataMapStr = _dataMapStr + declaring_type_name value_type ~}}
+{{~if _dataMapFormatStr != ""~}}
+	{{~ _dataMapStr = _dataMapStr + declaring_type_name value_type ~}}
+{{~end~}}
 
 type {{go_full_name}} struct {
     _dataList []{{declaring_type_name value_type}}
+	{{~if _dataMapFormatStr != ""~}}
 	_dataMap {{_dataMapStr}}
+	{{~end~}}
 }
 
 /*
-	
+{{~ for x in __this.index_list ~}}
+	{{_dataMapStr}} 
+{{~ end ~}}
 {{_dataMapStr}}
 {{_dataMapFormatStr}}
 {{__this}}
@@ -83,17 +89,25 @@ func New{{go_full_name}}(_buf *luban.ByteBuf) (*{{go_full_name}}, error) {
 		return nil, err
 	} else {
 		_dataList := make([]{{declaring_type_name value_type}}, 0, size)
+		{{~if _dataMapFormatStr != ""~}}
 		_dataMap := make({{_dataMapStr}})
+		{{~end~}}
 
 		for i := 0 ; i < size ; i++ {
 			if _v, err2 := New{{full_name value_type.def_bean}}(_buf); err2 != nil {
 				return nil, err2
 			} else {
 				_dataList = append(_dataList, _v)
+				{{~if _dataMapFormatStr != ""~}}
 				_dataMap{{_dataMapFormatStr}} = _v
+				{{~end~}}
 			}
 		}
+		{{~if _dataMapFormatStr != ""~}}
 		return &{{go_full_name}}{_dataList:_dataList, _dataMap:_dataMap}, nil
+		{{~else~}}
+		return &{{go_full_name}}{_dataList:_dataList}, nil
+		{{~end~}}
 	}
 }
 
@@ -105,7 +119,16 @@ func (table *{{go_full_name}}) Get(index int) {{declaring_type_name value_type}}
     return table._dataList[index]
 }
 
+{{~if _dataMapFormatStr != ""~}}
+func (table *{{go_full_name}}) GetDataMap() {{_dataMapStr}} {
+    return table._dataMap
+}	
 
+	{{~for x in __this.index_list~}}
+	{{~end~}}
+
+
+{{~end~}}
 {{~else~}}
 
 import "errors"
