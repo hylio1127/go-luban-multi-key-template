@@ -15,9 +15,6 @@ type Tables struct {
     TbJusttest *TbJusttest
     TbJusttest2 *TbJusttest2
     TbJusttest3 *TbJusttest3
-    Tbhero *Tbhero
-    Tbitem *ItemTbitem
-    Tbtask *TaskTbtask
 }
 
 func NewTables(loader JsonLoader) (*Tables, error) {
@@ -41,24 +38,6 @@ func NewTables(loader JsonLoader) (*Tables, error) {
         return nil, err
     }
     if tables.TbJusttest3, err = NewTbJusttest3(buf) ; err != nil {
-        return nil, err
-    }
-    if buf, err = loader("tbhero") ; err != nil {
-        return nil, err
-    }
-    if tables.Tbhero, err = NewTbhero(buf) ; err != nil {
-        return nil, err
-    }
-    if buf, err = loader("item_tbitem") ; err != nil {
-        return nil, err
-    }
-    if tables.Tbitem, err = NewItemTbitem(buf) ; err != nil {
-        return nil, err
-    }
-    if buf, err = loader("task_tbtask") ; err != nil {
-        return nil, err
-    }
-    if tables.Tbtask, err = NewTaskTbtask(buf) ; err != nil {
         return nil, err
     }
     return tables, nil

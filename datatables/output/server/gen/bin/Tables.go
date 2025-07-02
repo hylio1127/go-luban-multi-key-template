@@ -20,9 +20,6 @@ type Tables struct {
     TbJusttest *TbJusttest
     TbJusttest2 *TbJusttest2
     TbJusttest3 *TbJusttest3
-    Tbhero *Tbhero
-    Tbitem *ItemTbitem
-    Tbtask *TaskTbtask
 }
 
 func NewTables(loader ByteBufLoader) (*Tables, error) {
@@ -47,24 +44,6 @@ func NewTables(loader ByteBufLoader) (*Tables, error) {
     }
     if tables.TbJusttest3, err = NewTbJusttest3(buf) ; err != nil {
         return nil, errors.Join(errors.New("failed to load TbJusttest3"), err)
-    }
-    if buf, err = loader("tbhero") ; err != nil {
-        return nil, err
-    }
-    if tables.Tbhero, err = NewTbhero(buf) ; err != nil {
-        return nil, errors.Join(errors.New("failed to load Tbhero"), err)
-    }
-    if buf, err = loader("item_tbitem") ; err != nil {
-        return nil, err
-    }
-    if tables.Tbitem, err = NewItemTbitem(buf) ; err != nil {
-        return nil, errors.Join(errors.New("failed to load Tbitem"), err)
-    }
-    if buf, err = loader("task_tbtask") ; err != nil {
-        return nil, err
-    }
-    if tables.Tbtask, err = NewTaskTbtask(buf) ; err != nil {
-        return nil, errors.Join(errors.New("failed to load Tbtask"), err)
     }
     return tables, nil
 }
