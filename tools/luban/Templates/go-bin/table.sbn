@@ -2,12 +2,41 @@
 package {{__top_module}};
 {{~end~}}
 
-{{
+{{~
     go_full_name = full_name __this
     key_type = __this.key_ttype
     value_type =  __this.value_ttype
     index_field = __this.index_field
-}}
+~}}
+{{~
+func get_sub_map 
+	_returnStr = ""
+	_idx = $0
+ 	_tempIdx = 1 
+	for y in __this.index_list
+		if _tempIdx > _idx
+			_returnStr = _returnStr + "map[" + declaring_type_name y.type + "]"
+		end
+		_tempIdx = _tempIdx + 1
+	end
+	ret _returnStr + declaring_type_name value_type
+end
+
+func get_key_str
+	_returnStr = ""
+	_idx = $0
+ 	_tempIdx = 1 
+	for y in __this.index_list
+		if _tempIdx > _idx
+			ret _returnStr
+		end
+		_returnStr = _returnStr + "[_v." + format_field_name __code_style y.index_field.name + "]"
+		_tempIdx = _tempIdx + 1
+	end
+	ret _returnStr
+end
+~}}
+
 
 import "{{__luban_module_name}}"
 
@@ -58,15 +87,19 @@ func (table *{{go_full_name}}) Get(key {{declaring_type_name key_type}}) {{decla
 }
 
 {{~else if __this.is_list_table~}}
-{{~ _dataMapStr = "" ~}}
-{{~ _dataMapFormatStr = "" ~}}
-{{~ for x in __this.index_list ~}}
-	{{~ _dataMapStr = _dataMapStr + "map[" + declaring_type_name x.type + "]" ~}}
-	{{~ _dataMapFormatStr = _dataMapFormatStr + "[_v." + format_field_name __code_style x.index_field.name + "]" ~}}
-{{~ end ~}}
-{{~if _dataMapFormatStr != ""~}}
-	{{~ _dataMapStr = _dataMapStr + declaring_type_name value_type ~}}
-{{~end~}}
+{{~ 
+_dataMapStr = ""
+_dataMapFormatStr = "" 
+_list_len = 0
+for x in __this.index_list 
+	_dataMapStr = _dataMapStr + "map[" + declaring_type_name x.type + "]"
+	_dataMapFormatStr = _dataMapFormatStr + "[_v." + format_field_name __code_style x.index_field.name + "]"
+	_list_len = _list_len + 1
+end
+if _dataMapFormatStr != ""
+	_dataMapStr = _dataMapStr + declaring_type_name value_type 
+end
+~}}
 
 type {{go_full_name}} struct {
     _dataList []{{declaring_type_name value_type}}
@@ -90,6 +123,15 @@ func New{{go_full_name}}(_buf *luban.ByteBuf) (*{{go_full_name}}, error) {
 			} else {
 				_dataList = append(_dataList, _v)
 				{{~if _dataMapFormatStr != ""~}}
+					{{~ _idx = 1 ~}}
+					{{~for x in __this.index_list~}}
+						{{~if _idx < _list_len ~}}
+				if _dataMap{{get_key_str _idx}} == nil {
+					_dataMap{{get_key_str _idx}} = make({{get_sub_map _idx}})
+				}
+						{{~end~}}
+						{{~ _idx = _idx + 1 ~}}
+					{{~end~}}
 				_dataMap{{_dataMapFormatStr}} = _v
 				{{~end~}}
 			}
@@ -118,22 +160,13 @@ func (table *{{go_full_name}}) GetDataMap() {{_dataMapStr}} {
 {{~ _returnMapStr = "" ~}}
 {{~ _idx = 1 ~}}
 {{~for x in __this.index_list~}}
-	{{~ _returnStr = "" ~}}
 	{{~ if _keyStr != "" ~}} 
 		{{~_keyStr = _keyStr + ", "~}} 
 	{{~end~}}
 	{{~ _returnMapStr = _returnMapStr + "[key" + _idx + "]"  ~}}
 	{{~ _keyStr = _keyStr + "key" + _idx + " " + declaring_type_name x.type  ~}}
-	{{~ _tempIdx = 1 ~}}
-	{{~for y in __this.index_list~}}
-		{{~ if _tempIdx > _idx ~}}
-			{{~ _returnStr = _returnStr + "map[" + declaring_type_name y.type + "]" ~}}
-		{{~end~}}
-		{{~ _tempIdx = _tempIdx + 1 ~}}
-	{{~end~}}
-	{{~ _returnStr = _returnStr + declaring_type_name value_type ~}}
 
-func (table *{{go_full_name}}) GetByKey{{_idx}}({{_keyStr}}) {{_returnStr}} {
+func (table *{{go_full_name}}) GetByKey{{_idx}}({{_keyStr}}) {{get_sub_map _idx}} {
 	return table._dataMap{{_returnMapStr}}
 }
 {{~ _idx = _idx + 1 ~}}

@@ -8,6 +8,34 @@ package {{__top_module}};
     value_type =  __this.value_ttype
     index_field = __this.index_field
 ~}}
+{{~
+func get_sub_map 
+	_returnStr = ""
+	_idx = $0
+ 	_tempIdx = 1 
+	for y in __this.index_list
+		if _tempIdx > _idx
+			_returnStr = _returnStr + "map[" + declaring_type_name y.type + "]"
+		end
+		_tempIdx = _tempIdx + 1
+	end
+	ret _returnStr + declaring_type_name value_type
+end
+
+func get_key_str
+	_returnStr = ""
+	_idx = $0
+ 	_tempIdx = 1 
+	for y in __this.index_list
+		if _tempIdx > _idx
+			ret _returnStr
+		end
+		_returnStr = _returnStr + "[_v." + format_field_name __code_style y.index_field.name + "]"
+		_tempIdx = _tempIdx + 1
+	end
+	ret _returnStr
+end
+~}}
 
 {{~if __this.is_map_table~}}
 type {{go_full_name}} struct {
@@ -52,15 +80,19 @@ func (table *{{go_full_name}}) Get(key {{declaring_type_name key_type}}) {{decla
 }
 
 {{~else if __this.is_list_table~}}
-{{~ _dataMapStr = "" ~}}
-{{~ _dataMapFormatStr = "" ~}}
-{{~ for x in __this.index_list ~}}
-	{{~ _dataMapStr = _dataMapStr + "map[" + declaring_type_name x.type + "]" ~}}
-	{{~ _dataMapFormatStr = _dataMapFormatStr + "[_v." + format_field_name __code_style x.index_field.name + "]" ~}}
-{{~ end ~}}
-{{~if _dataMapFormatStr != ""~}}
-	{{~ _dataMapStr = _dataMapStr + declaring_type_name value_type ~}}
-{{~end~}}
+{{~ 
+_dataMapStr = ""
+_dataMapFormatStr = "" 
+_list_len = 0
+for x in __this.index_list 
+	_dataMapStr = _dataMapStr + "map[" + declaring_type_name x.type + "]"
+	_dataMapFormatStr = _dataMapFormatStr + "[_v." + format_field_name __code_style x.index_field.name + "]"
+	_list_len = _list_len + 1
+end
+if _dataMapFormatStr != ""
+	_dataMapStr = _dataMapStr + declaring_type_name value_type 
+end
+~}}
 
 type {{go_full_name}} struct {
     _dataList []{{declaring_type_name value_type}}
@@ -81,6 +113,15 @@ func New{{go_full_name}}(_buf []map[string]interface{}) (*{{go_full_name}}, erro
         } else {
             _dataList = append(_dataList, _v)
             {{~if _dataMapFormatStr != ""~}}
+                {{~ _idx = 1 ~}}
+                {{~for x in __this.index_list~}}
+                    {{~if _idx < _list_len ~}}
+            if _dataMap{{get_key_str _idx}} == nil {
+                _dataMap{{get_key_str _idx}} = make({{get_sub_map _idx}})
+            }
+                    {{~end~}}
+                    {{~ _idx = _idx + 1 ~}}
+                {{~end~}}
             _dataMap{{_dataMapFormatStr}} = _v
             {{~end~}}
         }
