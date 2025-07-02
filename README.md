@@ -1,6 +1,7 @@
-# luban go语言多联合key
+# luban go语言多联合key的Map导出模板
+Template for Golang Multi-Composite Key Support in Luban Table Generation Tool
 
-原生模板不支持，其他地方也没找到，需要的自取，目前只支持 key1+key2的联合key模式，导完如下图
+原生模板不支持联合key的Map，其他地方也没找到，目前只支持联合key,不支持独立索引key,导完如下图
 ![alt text](image.png)
 
 ## 用法
