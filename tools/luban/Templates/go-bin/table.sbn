@@ -75,15 +75,6 @@ type {{go_full_name}} struct {
 	{{~end~}}
 }
 
-/*
-{{~ for x in __this.index_list ~}}
-	{{_dataMapStr}} 
-{{~ end ~}}
-{{_dataMapStr}}
-{{_dataMapFormatStr}}
-{{__this}}
-*/
-
 func New{{go_full_name}}(_buf *luban.ByteBuf) (*{{go_full_name}}, error) {
 	if size, err := _buf.ReadSize() ; err != nil {
 		return nil, err
@@ -123,10 +114,30 @@ func (table *{{go_full_name}}) Get(index int) {{declaring_type_name value_type}}
 func (table *{{go_full_name}}) GetDataMap() {{_dataMapStr}} {
     return table._dataMap
 }	
-
-	{{~for x in __this.index_list~}}
+{{~ _keyStr = "" ~}}
+{{~ _returnMapStr = "" ~}}
+{{~ _idx = 1 ~}}
+{{~for x in __this.index_list~}}
+	{{~ _returnStr = "" ~}}
+	{{~ if _keyStr != "" ~}} 
+		{{~_keyStr = _keyStr + ", "~}} 
 	{{~end~}}
+	{{~ _returnMapStr = _returnMapStr + "[key" + _idx + "]"  ~}}
+	{{~ _keyStr = _keyStr + "key" + _idx + " " + declaring_type_name x.type  ~}}
+	{{~ _tempIdx = 1 ~}}
+	{{~for y in __this.index_list~}}
+		{{~ if _tempIdx > _idx ~}}
+			{{~ _returnStr = _returnStr + "map[" + declaring_type_name y.type + "]" ~}}
+		{{~end~}}
+		{{~ _tempIdx = _tempIdx + 1 ~}}
+	{{~end~}}
+	{{~ _returnStr = _returnStr + declaring_type_name value_type ~}}
 
+func (table *{{go_full_name}}) GetByKey{{_idx}}({{_keyStr}}) {{_returnStr}} {
+	return table._dataMap{{_returnMapStr}}
+}
+{{~ _idx = _idx + 1 ~}}
+{{~end~}}
 
 {{~end~}}
 {{~else~}}
